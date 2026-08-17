@@ -1,0 +1,3 @@
+# Prebuilt output: never translate line endings, in either direction. What was
+# tested locally must be exactly what lands on the server.
+* -text

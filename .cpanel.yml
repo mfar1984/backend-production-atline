@@ -1,0 +1,15 @@
+---
+# Deploys the PREBUILT bundle. There is no build step here on purpose: the
+# bundle already contains .next and a pruned node_modules, so the server never
+# needs npm install, a devDependency, or enough memory to run a Next build.
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home2/atlineco/sys.atline.com.my
+    - /bin/cp -R . $DEPLOYPATH/
+    # .env.production carries the database password and is git-ignored, so it
+    # must already exist on the server. Next loads it ahead of a plain .env.
+    - test -f $DEPLOYPATH/.env.production || echo "WARNING: $DEPLOYPATH/.env.production is missing - the app cannot reach the database"
+    # Schema first, then restart, so the running app never sees a half-migrated
+    # database.
+    - source /home2/atlineco/nodevenv/sys.atline.com.my/24/bin/activate && cd $DEPLOYPATH && node scripts/migrate.js
+    - mkdir -p $DEPLOYPATH/tmp && touch $DEPLOYPATH/tmp/restart.txt

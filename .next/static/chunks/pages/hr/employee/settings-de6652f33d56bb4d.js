@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[9083],{3711:(_,e,n)=>{"use strict";n.r(e),n.d(e,{__N_SSP:()=>u,default:()=>s});var u=!0;function s(){return null}},6641:(_,e,n)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/hr/employee/settings",function(){return n(3711)}])}},_=>{_.O(0,[636,6593,8792],()=>_(_.s=6641)),_N_E=_.O()}]);

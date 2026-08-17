@@ -1,0 +1,33 @@
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home2/atlineco/sys.atline.com.my"
+PassengerBaseURI "/"
+PassengerNodejs "/home2/atlineco/nodevenv/sys.atline.com.my/24/bin/node"
+PassengerAppType node
+PassengerStartupFile server.js
+# DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION END
+
+# NOTE: the home directory is /home2, not /home. Getting this wrong makes
+# Passenger report "App root not found" with no further detail. If cPanel
+# regenerates this block, check the path it writes.
+
+# Allow HTTP methods for API
+<LimitExcept GET POST PUT PATCH DELETE OPTIONS>
+    Order allow,deny
+    Allow from all
+</LimitExcept>
+
+# Allow DELETE method specifically
+<Limit DELETE>
+    Order allow,deny
+    Allow from all
+</Limit>
+
+# Never serve the environment file, the migration SQL or the server sources as
+# static content. Passenger routes everything through Node, but a
+# misconfiguration that drops back to Apache must not expose credentials.
+<FilesMatch "^\.env">
+    Require all denied
+</FilesMatch>
+<FilesMatch "\.(sql|ts|tsx)$">
+    Require all denied
+</FilesMatch>

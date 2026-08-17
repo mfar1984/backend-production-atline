@@ -1,0 +1,21 @@
+# Credentials. The bundle you upload contains .env.production; the repository
+# must never carry a database password, so it is excluded here and has to exist
+# on the server already.
+.env
+.env.*
+!.env.example
+
+# Runtime data, written on the server. Next's file tracer copies the local
+# equivalents of these into the build output on its own, so they are excluded
+# here as well as emptied by the packaging script — a database backup archive
+# must never reach this repository.
+uploads/*
+!uploads/.gitkeep
+tmp/*
+!tmp/.gitkeep
+backups/*
+!backups/.gitkeep
+
+# Logs
+*.log
+npm-debug.log*
