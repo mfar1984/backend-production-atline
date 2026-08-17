@@ -1,14 +1,25 @@
 # DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
 PassengerAppRoot "/home2/atlineco/sys.atline.com.my"
 PassengerBaseURI "/"
-PassengerNodejs "/home2/atlineco/nodevenv/sys.atline.com.my/24/bin/node"
+PassengerNodejs "/home2/atlineco/nodevenv/sys.atline.com.my/20/bin/node"
 PassengerAppType node
 PassengerStartupFile server.js
 # DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION END
 
-# NOTE: the home directory is /home2, not /home. Getting this wrong makes
-# Passenger report "App root not found" with no further detail. If cPanel
-# regenerates this block, check the path it writes.
+# NOTES ON THE BLOCK ABOVE
+#
+# The home directory is /home2, not /home. Getting this wrong makes Passenger
+# report "App root not found" with no further detail.
+#
+# The "/20/" in PassengerNodejs is the Node.js version chosen in cPanel's
+# Node.js App page — it is a real directory under ~/nodevenv, not a version
+# string Passenger interprets. cPanel writes this block itself when the app is
+# created, and deploying this bundle OVERWRITES it. So if you ever change the
+# Node version in cPanel, this line must change to match or Passenger fails
+# with a missing-interpreter error that does not mention the version at all.
+#
+# Confirmed 20 on this server: ~/nodevenv/sys.atline.com.my/20/bin/activate
+# exists. Next 16.2.6 declares engines >=20.9.0, so 20 is supported.
 
 # Allow HTTP methods for API
 <LimitExcept GET POST PUT PATCH DELETE OPTIONS>
@@ -31,3 +42,13 @@ PassengerStartupFile server.js
 <FilesMatch "\.(sql|ts|tsx)$">
     Require all denied
 </FilesMatch>
+
+# This bundle is deployed by cloning the repository INTO the app root, so .git/
+# sits here holding the complete history. FilesMatch cannot match a directory,
+# so RedirectMatch is used instead — it can.
+#
+# Passenger normally hands every request to Node, which would 404 these anyway.
+# The rule is here for the case where Passenger is misconfigured or stopped and
+# Apache serves the directory as plain files. That is the same reasoning as the
+# .env rule above, and it is the case that actually leaks.
+RedirectMatch 404 ^/\.git(/|$)
