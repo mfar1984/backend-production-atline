@@ -11,7 +11,37 @@ CREATE TABLE IF NOT EXISTS `backups` (
   `created_at`  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `idx_backups_created` (`created_at`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- COLLATE is stated explicitly, like every other table in migrations/.
+--
+-- This was the only CREATE TABLE that omitted it, so the table inherited
+-- whatever the server's default happened to be: utf8mb4_0900_ai_ci on MySQL 8,
+-- utf8mb4_general_ci on MariaDB. Two consequences, both real:
+--
+--   1. A mysqldump taken on MySQL 8 carried utf8mb4_0900_ai_ci, which MariaDB
+--      rejects outright with "#1273 Unknown collation" — the import stops dead
+--      on this one table out of 89.
+--   2. Even where the import succeeds, `backups` ends up with a different
+--      collation from every other table, and any VARCHAR comparison against
+--      them fails with "Illegal mix of collations".
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Normalise a table created before the COLLATE above was added.
+--
+-- CREATE TABLE IF NOT EXISTS does nothing when the table already exists, so the
+-- fix above only helps fresh installs. Existing databases keep the inherited
+-- collation until something converts them. Guarded so it is a no-op once done.
+SET @needs_convert := (
+  SELECT COUNT(*) FROM information_schema.TABLES
+  WHERE TABLE_SCHEMA = DATABASE()
+    AND TABLE_NAME   = 'backups'
+    AND TABLE_COLLATION <> 'utf8mb4_unicode_ci'
+);
+SET @sql := IF(@needs_convert > 0,
+  'ALTER TABLE `backups` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci',
+  'DO 0');
+PREPARE stmt FROM @sql;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
 
 -- Seed additional backup storage settings (idempotent)
 INSERT INTO `config_settings` (`module`, `key`, `value`)
