@@ -273,6 +273,7 @@
   "/api/hr/leave": "pages/api/hr/leave.js",
   "/api/hr/payroll/periods/[id]": "pages/api/hr/payroll/periods/[id].js",
   "/api/notifications/stream": "pages/api/notifications/stream.js",
+  "/api/operations/field/file": "pages/api/operations/field/file.js",
   "/api/operations/proposals": "pages/api/operations/proposals.js",
   "/api/operations/proposals/[id]": "pages/api/operations/proposals/[id].js",
   "/api/operations/tender-documents": "pages/api/operations/tender-documents.js",

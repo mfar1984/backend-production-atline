@@ -1103,6 +1103,12 @@
       "namedRegex": "^/api/operations/field/assets(?:/)?$"
     },
     {
+      "page": "/api/operations/field/file",
+      "regex": "^/api/operations/field/file(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/operations/field/file(?:/)?$"
+    },
+    {
       "page": "/api/operations/field/forms",
       "regex": "^/api/operations/field/forms(?:/)?$",
       "routeKeys": {},
@@ -1904,15 +1910,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/2eEc93bOWD9b2Y124BFZX/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/yC_7HC5E_4xNyl1Qa0Upu/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/2eEc93bOWD9b2Y124BFZX/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/yC_7HC5E_4xNyl1Qa0Upu/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/2eEc93bOWD9b2Y124BFZX/login\\.json$"
+      "dataRouteRegex": "^/_next/data/yC_7HC5E_4xNyl1Qa0Upu/login\\.json$"
     }
   ],
   "rsc": {
