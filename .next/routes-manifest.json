@@ -1904,15 +1904,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/udsWwG_abpIyxR2ZJYidv/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/2eEc93bOWD9b2Y124BFZX/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/udsWwG_abpIyxR2ZJYidv/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/2eEc93bOWD9b2Y124BFZX/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/udsWwG_abpIyxR2ZJYidv/login\\.json$"
+      "dataRouteRegex": "^/_next/data/2eEc93bOWD9b2Y124BFZX/login\\.json$"
     }
   ],
   "rsc": {
