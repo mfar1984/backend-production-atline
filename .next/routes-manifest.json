@@ -1916,15 +1916,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/SkQETzqEK5rcrpoQJ\\-DDq/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/BdTMuE8kzWEpMZBWpvsX3/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/SkQETzqEK5rcrpoQJ\\-DDq/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/BdTMuE8kzWEpMZBWpvsX3/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/SkQETzqEK5rcrpoQJ\\-DDq/login\\.json$"
+      "dataRouteRegex": "^/_next/data/BdTMuE8kzWEpMZBWpvsX3/login\\.json$"
     }
   ],
   "rsc": {

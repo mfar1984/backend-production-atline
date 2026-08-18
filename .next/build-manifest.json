@@ -4,8 +4,8 @@
   ],
   "devFiles": [],
   "lowPriorityFiles": [
-    "static/SkQETzqEK5rcrpoQJ-DDq/_buildManifest.js",
-    "static/SkQETzqEK5rcrpoQJ-DDq/_ssgManifest.js"
+    "static/BdTMuE8kzWEpMZBWpvsX3/_buildManifest.js",
+    "static/BdTMuE8kzWEpMZBWpvsX3/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "rootMainFilesTree": {},
@@ -613,7 +613,7 @@
       "static/chunks/8230-59bb8e4aa1ceff96.js",
       "static/chunks/1930-83afb99eb1ed4c42.js",
       "static/chunks/725-2b79b0573c987b63.js",
-      "static/chunks/7844-f617637d4246e525.js",
+      "static/chunks/7844-c6d7c1b0df728a27.js",
       "static/chunks/pages/operations/field/cases-f541fbd5a441ce78.js"
     ],
     "/operations/field/settings": [
@@ -640,7 +640,7 @@
       "static/chunks/8230-59bb8e4aa1ceff96.js",
       "static/chunks/1930-83afb99eb1ed4c42.js",
       "static/chunks/725-2b79b0573c987b63.js",
-      "static/chunks/7844-f617637d4246e525.js",
+      "static/chunks/7844-c6d7c1b0df728a27.js",
       "static/chunks/pages/operations/field/work-orders-5d06637a422b31b3.js"
     ],
     "/operations/procurement": [
