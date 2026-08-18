@@ -1964,15 +1964,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/BAaeQPE09Q3EYMbonwALQ/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/CYWwx2ENzgO3EssrJYRbV/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/BAaeQPE09Q3EYMbonwALQ/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/CYWwx2ENzgO3EssrJYRbV/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/BAaeQPE09Q3EYMbonwALQ/login\\.json$"
+      "dataRouteRegex": "^/_next/data/CYWwx2ENzgO3EssrJYRbV/login\\.json$"
     }
   ],
   "rsc": {
