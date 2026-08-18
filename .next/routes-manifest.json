@@ -623,6 +623,54 @@
       "namedRegex": "^/api/ess/stats(?:/)?$"
     },
     {
+      "page": "/api/field/ess/apply",
+      "regex": "^/api/field/ess/apply(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/apply(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/detail",
+      "regex": "^/api/field/ess/detail(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/detail(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/doc",
+      "regex": "^/api/field/ess/doc(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/doc(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/lookups",
+      "regex": "^/api/field/ess/lookups(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/lookups(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/overtime-day",
+      "regex": "^/api/field/ess/overtime\\-day(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/overtime\\-day(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/payroll",
+      "regex": "^/api/field/ess/payroll(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/payroll(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/profile",
+      "regex": "^/api/field/ess/profile(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/profile(?:/)?$"
+    },
+    {
+      "page": "/api/field/ess/requests",
+      "regex": "^/api/field/ess/requests(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/ess/requests(?:/)?$"
+    },
+    {
       "page": "/api/field/file",
       "regex": "^/api/field/file(?:/)?$",
       "routeKeys": {},
@@ -1916,15 +1964,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/BdTMuE8kzWEpMZBWpvsX3/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/BAaeQPE09Q3EYMbonwALQ/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/BdTMuE8kzWEpMZBWpvsX3/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/BAaeQPE09Q3EYMbonwALQ/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/BdTMuE8kzWEpMZBWpvsX3/login\\.json$"
+      "dataRouteRegex": "^/_next/data/BAaeQPE09Q3EYMbonwALQ/login\\.json$"
     }
   ],
   "rsc": {
