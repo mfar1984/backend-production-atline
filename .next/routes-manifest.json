@@ -1481,6 +1481,12 @@
       "namedRegex": "^/config/maintenance(?:/)?$"
     },
     {
+      "page": "/config/pwa",
+      "regex": "^/config/pwa(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/config/pwa(?:/)?$"
+    },
+    {
       "page": "/config/social-seo",
       "regex": "^/config/social\\-seo(?:/)?$",
       "routeKeys": {},
@@ -1964,15 +1970,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/CYWwx2ENzgO3EssrJYRbV/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/tA_f3FCkS9DqjlSh3GmPb/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/CYWwx2ENzgO3EssrJYRbV/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/tA_f3FCkS9DqjlSh3GmPb/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/CYWwx2ENzgO3EssrJYRbV/login\\.json$"
+      "dataRouteRegex": "^/_next/data/tA_f3FCkS9DqjlSh3GmPb/login\\.json$"
     }
   ],
   "rsc": {
