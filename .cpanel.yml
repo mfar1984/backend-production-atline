@@ -4,12 +4,20 @@
 # needs npm install, a devDependency, or enough memory to run a Next build.
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/atlineco/sys.atline.com.my
+    - export DEPLOYPATH=/home/khisdsb123/sys.atline.com.my
     - /bin/cp -R . $DEPLOYPATH/
     # .env.production carries the database password and is git-ignored, so it
     # must already exist on the server. Next loads it ahead of a plain .env.
     - test -f $DEPLOYPATH/.env.production || echo "WARNING: $DEPLOYPATH/.env.production is missing - the app cannot reach the database"
     # Schema first, then restart, so the running app never sees a half-migrated
     # database.
-    - source /home2/atlineco/nodevenv/sys.atline.com.my/20/bin/activate && cd $DEPLOYPATH && node scripts/migrate.js
+    #
+    # The activate path is NOT chained with && any more. It used to be, and when
+    # the account moved the path went stale: source failed, the && short-circuited,
+    # and migrations were skipped on every deploy while the log still looked fine.
+    # Sourcing is now allowed to fail loudly, and migrate.js runs either way; it
+    # only needs a node on PATH, which Passenger's environment already provides.
+    - test -f /home/khisdsb123/nodevenv/sys.atline.com.my/24/bin/activate || echo "WARNING: /home/khisdsb123/nodevenv/sys.atline.com.my/24/bin/activate is missing - check the Node version in cPanel's Node.js App page"
+    - source /home/khisdsb123/nodevenv/sys.atline.com.my/24/bin/activate || true
+    - cd $DEPLOYPATH && node scripts/migrate.js
     - mkdir -p $DEPLOYPATH/tmp && touch $DEPLOYPATH/tmp/restart.txt

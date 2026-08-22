@@ -1,37 +1,54 @@
 # DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
-PassengerAppRoot "/home2/atlineco/sys.atline.com.my"
+PassengerAppRoot "/home/khisdsb123/sys.atline.com.my"
 PassengerBaseURI "/"
-PassengerNodejs "/home2/atlineco/nodevenv/sys.atline.com.my/20/bin/node"
+PassengerNodejs "/home/khisdsb123/nodevenv/sys.atline.com.my/24/bin/node"
 PassengerAppType node
 PassengerStartupFile server.js
 # DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION END
 
 # NOTES ON THE BLOCK ABOVE
 #
-# The home directory is /home2, not /home. Getting this wrong makes Passenger
-# report "App root not found" with no further detail.
+# This block is kept in the repository ON PURPOSE, even though cPanel writes its
+# own copy. .cpanel.yml deploys with `cp -R . $DEPLOYPATH/`, which overwrites the
+# .htaccess on the server — so whatever is here is what Passenger reads after a
+# deploy. If this block were absent, every deploy would strip the Passenger
+# configuration and the site would 500 until cPanel rewrote it.
 #
-# The "/20/" in PassengerNodejs is the Node.js version chosen in cPanel's
-# Node.js App page — it is a real directory under ~/nodevenv, not a version
-# string Passenger interprets. cPanel writes this block itself when the app is
-# created, and deploying this bundle OVERWRITES it. So if you ever change the
-# Node version in cPanel, this line must change to match or Passenger fails
-# with a missing-interpreter error that does not mention the version at all.
+# It must match cPanel's Node.js App page exactly:
+#   • The home directory is /home, not /home2, on account khisdsb123. Getting
+#     this wrong makes Passenger report "App root not found" and nothing else.
+#   • The "/24/" is the Node version DIRECTORY under ~/nodevenv, not a version
+#     string Passenger interprets. Change the version in cPanel and this line has
+#     to change too, or Passenger fails with a missing-interpreter error that
+#     never mentions a version number.
 #
-# Confirmed 20 on this server: ~/nodevenv/sys.atline.com.my/20/bin/activate
-# exists. Next 16.2.6 declares engines >=20.9.0, so 20 is supported.
+# scripts/package-production.js derives the same two values for .cpanel.yml from
+# CPANEL_USER / APP_DOMAIN / NODE_VERSION_DIR. If you edit this block, edit those.
+#
+# NOT included here: the CLOUDLINUX ENV VARS block (SetEnv DB_PASSWORD,
+# JWT_SECRET and friends). cPanel maintains that from the Node.js App page, and
+# copying it into the repository would publish the database password and both
+# signing secrets to GitHub. Because a deploy overwrites this file, those SetEnv
+# lines are lost until cPanel rewrites them — which is exactly why
+# .env.production carries the same values as a fallback. Keep the two in step.
 
-# Allow HTTP methods for API
-<LimitExcept GET POST PUT PATCH DELETE OPTIONS>
-    Order allow,deny
-    Allow from all
-</LimitExcept>
-
-# Allow DELETE method specifically
-<Limit DELETE>
-    Order allow,deny
-    Allow from all
-</Limit>
+# NOTE ON HTTP METHODS
+#
+# There is deliberately no <Limit> or <LimitExcept> block here.
+#
+# The previous version carried two, titled "Allow HTTP methods for API" and
+# "Allow DELETE method specifically". Neither did anything:
+# <LimitExcept GET POST PUT PATCH DELETE OPTIONS> governs the methods NOT listed,
+# so it read "allow everything else" — a no-op — and both used the Apache 2.2
+# `Order allow,deny` syntax, which is a 500 on any server without
+# mod_access_compat loaded. They were removed rather than left to look load-bearing.
+#
+# PUT, PATCH and DELETE were being refused with a 403 HTML body before Passenger
+# on the previous account. Measured on this one, all three now reach the
+# application and are answered in JSON, so nothing needs to be allowed here. The
+# app tolerates either case regardless: the browser sends POST plus
+# X-HTTP-Method-Override and scripts/method-override-hook.cjs restores the real
+# method, while a genuine PUT is passed through untouched.
 
 # Never serve the environment file, the migration SQL or the server sources as
 # static content. Passenger routes everything through Node, but a
