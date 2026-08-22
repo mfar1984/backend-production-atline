@@ -4,6 +4,15 @@ import Head from "next/head";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { useBranding } from "@/lib/useBranding";
+import { installApiMethodTunnel } from "@/lib/apiMethodTunnel";
+
+// At module scope, NOT in an effect. React runs a child's effects before the
+// parent's, so a page that fetches on mount would fire before an effect here had
+// installed anything. Module evaluation happens before the first render, which is
+// the only point guaranteed to be earlier than every caller.
+//
+// Server-side this returns immediately — see the guard inside.
+installApiMethodTunnel();
 
 // Routes we never track (auth + the tracker would be noise).
 const SKIP = ['/login', '/_error', '/404', '/500'];

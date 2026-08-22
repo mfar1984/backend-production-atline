@@ -1,3 +1,14 @@
+// ── Injected by scripts/package-production.js — do not edit here ──
+//
+// Both hooks patch http.createServer, so they must load before startServer()
+// runs. The shutdown hook also needs its signal handler registered ahead of the
+// one Next installs, because Node runs signal listeners in registration order
+// and Next's own handler never completes in production.
+//
+// Source of truth: atline-backend/scripts/*.cjs
+require('./scripts/method-override-hook.cjs');
+require('./scripts/shutdown-hook.cjs');
+
 const path = require('path')
 
 const dir = path.join(__dirname)

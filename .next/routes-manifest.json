@@ -1976,15 +1976,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/fj6DCTHIizWI8ls1fPA58/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/MRfQ8p7pFCvMV1kDFNrnI/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/fj6DCTHIizWI8ls1fPA58/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/MRfQ8p7pFCvMV1kDFNrnI/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/fj6DCTHIizWI8ls1fPA58/login\\.json$"
+      "dataRouteRegex": "^/_next/data/MRfQ8p7pFCvMV1kDFNrnI/login\\.json$"
     }
   ],
   "rsc": {
