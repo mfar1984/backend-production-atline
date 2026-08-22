@@ -5,7 +5,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/khisdsb123/sys.atline.com.my
-    - /bin/cp -R . $DEPLOYPATH/
+    # This repository is cloned directly INTO the app root, so the copy would be a
+    # self-copy. Guarded rather than removed, so the file still works if the clone
+    # is ever moved somewhere separate from the deploy target.
+    - if [ "$PWD" != "$DEPLOYPATH" ]; then /bin/cp -R . $DEPLOYPATH/; fi
     # .env.production carries the database password and is git-ignored, so it
     # must already exist on the server. Next loads it ahead of a plain .env.
     - test -f $DEPLOYPATH/.env.production || echo "WARNING: $DEPLOYPATH/.env.production is missing - the app cannot reach the database"

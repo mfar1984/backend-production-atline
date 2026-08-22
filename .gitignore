@@ -4,6 +4,22 @@
 .env
 .env.*
 !.env.example
+# Server-owned, NOT application code. cPanel writes two delimited blocks into
+# .htaccess on the server — the Passenger configuration and the environment
+# variables from the Node.js App page — and it rewrites them whenever the app is
+# saved or restarted.
+#
+# This repository is cloned directly INTO the app root, so tracking the same file
+# gave it two writers and `git pull` started refusing to merge:
+#
+#   error: Your local changes to the following files would be overwritten by merge:
+#           .htaccess
+#
+# Discarding those "local changes" would have thrown away cPanel's blocks, taking
+# the Passenger interpreter path and the database credentials with them. The file
+# is therefore left to cPanel, and .htaccess.example carries our own rules for
+# whoever sets a server up next.
+.htaccess
 
 # Runtime data, written on the server. Next's file tracer copies the local
 # equivalents of these into the build output on its own, so they are excluded

@@ -1,18 +1,36 @@
-# DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+# ─────────────────────────────────────────────────────────────
+# TEMPLATE ONLY — the live file belongs to cPanel.
+#
+# This is shipped as .htaccess.example and is git-IGNORED as .htaccess. The
+# production repository is cloned directly into the app root, and cPanel writes
+# two of its own delimited blocks into .htaccess there, rewriting them whenever
+# the app is saved or restarted from the Node.js App page. Tracking the same path
+# gave the file two writers, and git started refusing to merge:
+#
+#   error: Your local changes to the following files would be overwritten by merge:
+#           .htaccess
+#
+# Discarding those "local changes" would have thrown away cPanel's blocks, taking
+# the Passenger interpreter path and the database credentials with them.
+#
+# So: create the live file from this template ONCE, then leave it to cPanel. Our
+# rules below sit outside cPanel's markers, so they survive its rewrites.
+# ─────────────────────────────────────────────────────────────
+
+# The marker text must match cPanel's byte for byte. cPanel finds its block by
+# searching for these comments; with different wording it does not find one and
+# APPENDS a second Passenger block instead, which is a duplicate-directive error.
+# Note this block says "DO NOT REMOVE." while the env-vars block below it says
+# "DO NOT REMOVE OR MODIFY." — that inconsistency is cPanel's, not a typo.
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
 PassengerAppRoot "/home/khisdsb123/sys.atline.com.my"
 PassengerBaseURI "/"
 PassengerNodejs "/home/khisdsb123/nodevenv/sys.atline.com.my/24/bin/node"
 PassengerAppType node
 PassengerStartupFile server.js
-# DO NOT REMOVE OR MODIFY. CLOUDLINUX PASSENGER CONFIGURATION END
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
 
 # NOTES ON THE BLOCK ABOVE
-#
-# This block is kept in the repository ON PURPOSE, even though cPanel writes its
-# own copy. .cpanel.yml deploys with `cp -R . $DEPLOYPATH/`, which overwrites the
-# .htaccess on the server — so whatever is here is what Passenger reads after a
-# deploy. If this block were absent, every deploy would strip the Passenger
-# configuration and the site would 500 until cPanel rewrote it.
 #
 # It must match cPanel's Node.js App page exactly:
 #   • The home directory is /home, not /home2, on account khisdsb123. Getting
@@ -22,15 +40,14 @@ PassengerStartupFile server.js
 #     to change too, or Passenger fails with a missing-interpreter error that
 #     never mentions a version number.
 #
-# scripts/package-production.js derives the same two values for .cpanel.yml from
+# scripts/package-production.js derives the same values for .cpanel.yml from
 # CPANEL_USER / APP_DOMAIN / NODE_VERSION_DIR. If you edit this block, edit those.
 #
-# NOT included here: the CLOUDLINUX ENV VARS block (SetEnv DB_PASSWORD,
-# JWT_SECRET and friends). cPanel maintains that from the Node.js App page, and
-# copying it into the repository would publish the database password and both
-# signing secrets to GitHub. Because a deploy overwrites this file, those SetEnv
-# lines are lost until cPanel rewrites them — which is exactly why
-# .env.production carries the same values as a fallback. Keep the two in step.
+# DELIBERATELY ABSENT: the CLOUDLINUX ENV VARS block (SetEnv DB_PASSWORD,
+# JWT_SECRET and friends). cPanel maintains that on the server, and committing it
+# would publish the database password and both signing secrets to GitHub.
+# .env.production carries the same values, so the app has them either way — keep
+# the two in step.
 
 # NOTE ON HTTP METHODS
 #
