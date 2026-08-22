@@ -623,6 +623,12 @@
       "namedRegex": "^/api/ess/stats(?:/)?$"
     },
     {
+      "page": "/api/field/avatar",
+      "regex": "^/api/field/avatar(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/field/avatar(?:/)?$"
+    },
+    {
       "page": "/api/field/ess/apply",
       "regex": "^/api/field/ess/apply(?:/)?$",
       "routeKeys": {},
@@ -1970,15 +1976,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/0YaA4tEf4OSaiR9qul1y5/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/fj6DCTHIizWI8ls1fPA58/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/0YaA4tEf4OSaiR9qul1y5/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/fj6DCTHIizWI8ls1fPA58/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/0YaA4tEf4OSaiR9qul1y5/login\\.json$"
+      "dataRouteRegex": "^/_next/data/fj6DCTHIizWI8ls1fPA58/login\\.json$"
     }
   ],
   "rsc": {

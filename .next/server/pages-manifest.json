@@ -274,6 +274,7 @@
   "/api/ess/claim": "pages/api/ess/claim.js",
   "/api/ess/expenses": "pages/api/ess/expenses.js",
   "/api/ess/leave": "pages/api/ess/leave.js",
+  "/api/field/avatar": "pages/api/field/avatar.js",
   "/api/field/ess/apply": "pages/api/field/ess/apply.js",
   "/api/field/ess/doc": "pages/api/field/ess/doc.js",
   "/api/field/photos": "pages/api/field/photos.js",
