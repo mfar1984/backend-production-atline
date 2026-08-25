@@ -1193,6 +1193,12 @@
       "namedRegex": "^/api/operations/field/lookups(?:/)?$"
     },
     {
+      "page": "/api/operations/field/photos",
+      "regex": "^/api/operations/field/photos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/operations/field/photos(?:/)?$"
+    },
+    {
       "page": "/api/operations/field/settings",
       "regex": "^/api/operations/field/settings(?:/)?$",
       "routeKeys": {},
@@ -1976,15 +1982,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/EbNNmnVliRP1BloGnSZK0/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/VwRAsRiahIKsIn6JjkeFe/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/EbNNmnVliRP1BloGnSZK0/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/VwRAsRiahIKsIn6JjkeFe/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/EbNNmnVliRP1BloGnSZK0/login\\.json$"
+      "dataRouteRegex": "^/_next/data/VwRAsRiahIKsIn6JjkeFe/login\\.json$"
     }
   ],
   "rsc": {
