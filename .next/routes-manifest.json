@@ -1982,15 +1982,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/VwRAsRiahIKsIn6JjkeFe/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/3S2Mv6eVjwLtCx\\-wvH49Q/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/VwRAsRiahIKsIn6JjkeFe/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/3S2Mv6eVjwLtCx\\-wvH49Q/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/VwRAsRiahIKsIn6JjkeFe/login\\.json$"
+      "dataRouteRegex": "^/_next/data/3S2Mv6eVjwLtCx\\-wvH49Q/login\\.json$"
     }
   ],
   "rsc": {
