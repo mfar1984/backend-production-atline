@@ -124,6 +124,31 @@ function shutdown(signal) {
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('SIGINT', () => shutdown('SIGINT'));
 
+/*
+ * A crash should look like a crash in the log, and should still leave cleanly.
+ *
+ * Node terminates on an uncaught exception, and since v15 on an unhandled
+ * rejection too, so the process was already going to die — but silently, with
+ * Passenger simply reporting that the app restarted. That is indistinguishable
+ * from the resource problem this file exists to fix, which made a crash loop
+ * impossible to tell apart from an orphaned process.
+ *
+ * The state after an uncaught exception is undefined, so this does NOT try to
+ * carry on. It records what happened and goes through the same shutdown as a
+ * signal, which closes the sockets and guarantees the exit.
+ *
+ * Borrowed from the sibling kf-next server, which has handled this from the start.
+ */
+process.on('uncaughtException', (err) => {
+  console.error('✖ Uncaught exception — shutting down.', err);
+  shutdown('SIGTERM');
+});
+
+process.on('unhandledRejection', (reason) => {
+  console.error('✖ Unhandled promise rejection — shutting down.', reason);
+  shutdown('SIGTERM');
+});
+
 // Printed so the cPanel Node.js log confirms the hook is loaded. Without it there
 // is no way to tell an app that will shut down cleanly from one that will not,
 // short of restarting and counting processes.
