@@ -303,6 +303,14 @@
       "namedRegex": "^/api/public/products/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
+      "page": "/api/public/suppliers/[id]",
+      "regex": "^/api/public/suppliers/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/public/suppliers/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/api/public/tenders/[id]",
       "regex": "^/api/public/tenders/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -389,6 +397,14 @@
         "nxtPid": "nxtPid"
       },
       "namedRegex": "^/api/web/sitemap/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/web/suppliers/[id]",
+      "regex": "^/api/web/suppliers/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/web/suppliers/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
       "page": "/api/web/tenders/[id]",
@@ -1349,6 +1365,12 @@
       "namedRegex": "^/api/public/supplier\\-register(?:/)?$"
     },
     {
+      "page": "/api/public/suppliers",
+      "regex": "^/api/public/suppliers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/public/suppliers(?:/)?$"
+    },
+    {
       "page": "/api/public/tenders",
       "regex": "^/api/public/tenders(?:/)?$",
       "routeKeys": {},
@@ -1431,6 +1453,12 @@
       "regex": "^/api/web/sitemap(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/web/sitemap(?:/)?$"
+    },
+    {
+      "page": "/api/web/suppliers",
+      "regex": "^/api/web/suppliers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/web/suppliers(?:/)?$"
     },
     {
       "page": "/api/web/tenders",
@@ -1982,15 +2010,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/ExE0JmbCptw8r8SmptpXZ/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/8R8h_c_CCrQ\\-CJfe2\\-xT5/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/ExE0JmbCptw8r8SmptpXZ/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/8R8h_c_CCrQ\\-CJfe2\\-xT5/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/ExE0JmbCptw8r8SmptpXZ/login\\.json$"
+      "dataRouteRegex": "^/_next/data/8R8h_c_CCrQ\\-CJfe2\\-xT5/login\\.json$"
     }
   ],
   "rsc": {
