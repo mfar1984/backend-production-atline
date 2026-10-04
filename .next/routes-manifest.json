@@ -1317,6 +1317,12 @@
       "namedRegex": "^/api/public/downloads/verify(?:/)?$"
     },
     {
+      "page": "/api/public/favicon",
+      "regex": "^/api/public/favicon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/public/favicon(?:/)?$"
+    },
+    {
       "page": "/api/public/gallery",
       "regex": "^/api/public/gallery(?:/)?$",
       "routeKeys": {},
@@ -2010,15 +2016,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/8R8h_c_CCrQ\\-CJfe2\\-xT5/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/__cDz422Hv8rSV0vQvxKA/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/8R8h_c_CCrQ\\-CJfe2\\-xT5/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/__cDz422Hv8rSV0vQvxKA/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/8R8h_c_CCrQ\\-CJfe2\\-xT5/login\\.json$"
+      "dataRouteRegex": "^/_next/data/__cDz422Hv8rSV0vQvxKA/login\\.json$"
     }
   ],
   "rsc": {
