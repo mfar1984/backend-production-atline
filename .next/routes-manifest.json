@@ -2016,15 +2016,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/__cDz422Hv8rSV0vQvxKA/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/z0ZkmbzXRBI_\\-6E0mtMaE/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/__cDz422Hv8rSV0vQvxKA/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/z0ZkmbzXRBI_\\-6E0mtMaE/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/__cDz422Hv8rSV0vQvxKA/login\\.json$"
+      "dataRouteRegex": "^/_next/data/z0ZkmbzXRBI_\\-6E0mtMaE/login\\.json$"
     }
   ],
   "rsc": {
