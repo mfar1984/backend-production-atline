@@ -4,8 +4,8 @@
   ],
   "devFiles": [],
   "lowPriorityFiles": [
-    "static/JFjdd2M7jpLlOOElVSwOG/_buildManifest.js",
-    "static/JFjdd2M7jpLlOOElVSwOG/_ssgManifest.js"
+    "static/y1VES-zzcn0YlWVCu6xUk/_buildManifest.js",
+    "static/y1VES-zzcn0YlWVCu6xUk/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "rootMainFilesTree": {},
@@ -621,9 +621,9 @@
       "static/chunks/8230-59bb8e4aa1ceff96.js",
       "static/chunks/1930-64dbd61bd2b68107.js",
       "static/chunks/9901-21229c692cd8b542.js",
-      "static/chunks/7032-1ca9032773d8039c.js",
-      "static/chunks/6580-3ae75177423be189.js",
-      "static/chunks/pages/operations/field/cases-f5e4a91471165e9c.js"
+      "static/chunks/7032-398826feb31669ab.js",
+      "static/chunks/8059-b416da8ebf0fc839.js",
+      "static/chunks/pages/operations/field/cases-3ae9e5af1e678d24.js"
     ],
     "/operations/field/settings": [
       "static/chunks/webpack-e43a7b69b0cdeef9.js",
@@ -631,7 +631,7 @@
       "static/chunks/main-73925ef1cb1b2a08.js",
       "static/chunks/8230-59bb8e4aa1ceff96.js",
       "static/chunks/1930-64dbd61bd2b68107.js",
-      "static/chunks/7032-1ca9032773d8039c.js",
+      "static/chunks/7032-398826feb31669ab.js",
       "static/chunks/pages/operations/field/settings-9dceb588735c8f05.js"
     ],
     "/operations/field/signatures": [
@@ -649,9 +649,18 @@
       "static/chunks/8230-59bb8e4aa1ceff96.js",
       "static/chunks/1930-64dbd61bd2b68107.js",
       "static/chunks/9901-21229c692cd8b542.js",
-      "static/chunks/7032-1ca9032773d8039c.js",
-      "static/chunks/6580-3ae75177423be189.js",
-      "static/chunks/pages/operations/field/work-orders-afb69ef3ed322378.js"
+      "static/chunks/7032-398826feb31669ab.js",
+      "static/chunks/8059-b416da8ebf0fc839.js",
+      "static/chunks/pages/operations/field/work-orders-981821ec79b2fe8f.js"
+    ],
+    "/operations/field/work-orders/[id]": [
+      "static/chunks/webpack-e43a7b69b0cdeef9.js",
+      "static/chunks/framework-27672fa91b3f354b.js",
+      "static/chunks/main-73925ef1cb1b2a08.js",
+      "static/chunks/8230-59bb8e4aa1ceff96.js",
+      "static/chunks/1930-64dbd61bd2b68107.js",
+      "static/chunks/7032-398826feb31669ab.js",
+      "static/chunks/pages/operations/field/work-orders/[id]-a327ad684cc04f70.js"
     ],
     "/operations/field/work-orders/[id]/edit": [
       "static/chunks/webpack-e43a7b69b0cdeef9.js",
