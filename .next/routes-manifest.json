@@ -2030,15 +2030,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/WBtThMfDAR58xT06vX_rF/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/JFjdd2M7jpLlOOElVSwOG/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/WBtThMfDAR58xT06vX_rF/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/JFjdd2M7jpLlOOElVSwOG/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/WBtThMfDAR58xT06vX_rF/login\\.json$"
+      "dataRouteRegex": "^/_next/data/JFjdd2M7jpLlOOElVSwOG/login\\.json$"
     }
   ],
   "rsc": {
