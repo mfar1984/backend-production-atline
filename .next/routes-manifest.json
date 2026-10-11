@@ -439,6 +439,14 @@
       "namedRegex": "^/hr/employee/(?<nxtPid>[^/]+?)/edit(?:/)?$"
     },
     {
+      "page": "/operations/field/work-orders/[id]/edit",
+      "regex": "^/operations/field/work\\-orders/([^/]+?)/edit(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/operations/field/work\\-orders/(?<nxtPid>[^/]+?)/edit(?:/)?$"
+    },
+    {
       "page": "/roles/[id]",
       "regex": "^/roles/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -1929,6 +1937,12 @@
       "namedRegex": "^/operations/field/work\\-orders(?:/)?$"
     },
     {
+      "page": "/operations/field/work-orders/new",
+      "regex": "^/operations/field/work\\-orders/new(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/operations/field/work\\-orders/new(?:/)?$"
+    },
+    {
       "page": "/operations/procurement",
       "regex": "^/operations/procurement(?:/)?$",
       "routeKeys": {},
@@ -2016,15 +2030,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/z0ZkmbzXRBI_\\-6E0mtMaE/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/WBtThMfDAR58xT06vX_rF/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/z0ZkmbzXRBI_\\-6E0mtMaE/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/WBtThMfDAR58xT06vX_rF/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/z0ZkmbzXRBI_\\-6E0mtMaE/login\\.json$"
+      "dataRouteRegex": "^/_next/data/WBtThMfDAR58xT06vX_rF/login\\.json$"
     }
   ],
   "rsc": {
