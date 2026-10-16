@@ -2038,15 +2038,15 @@
   "dataRoutes": [
     {
       "page": "/dashboard",
-      "dataRouteRegex": "^/_next/data/o3NF8gzYoGEk5o7xc9s6_/dashboard\\.json$"
+      "dataRouteRegex": "^/_next/data/jK0YMJ4\\-iCVtYmpySInlu/dashboard\\.json$"
     },
     {
       "page": "/hr/employee/settings",
-      "dataRouteRegex": "^/_next/data/o3NF8gzYoGEk5o7xc9s6_/hr/employee/settings\\.json$"
+      "dataRouteRegex": "^/_next/data/jK0YMJ4\\-iCVtYmpySInlu/hr/employee/settings\\.json$"
     },
     {
       "page": "/login",
-      "dataRouteRegex": "^/_next/data/o3NF8gzYoGEk5o7xc9s6_/login\\.json$"
+      "dataRouteRegex": "^/_next/data/jK0YMJ4\\-iCVtYmpySInlu/login\\.json$"
     }
   ],
   "rsc": {
